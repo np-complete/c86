@@ -1,0 +1,10 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    review (1.3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  review
