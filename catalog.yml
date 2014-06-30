@@ -1,4 +1,5 @@
 PREDEF:
   - intro.re
 CHAPS:
+  - login.re
 POSTDEF:
