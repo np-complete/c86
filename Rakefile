@@ -4,6 +4,7 @@ rule '.re' => ['.md'] do |t|
   sh "bundle exec md2review #{t.source} > #{t.name}"
 end
 
+desc "generate pdf"
 file "c86.pdf" => re_files do |t|
   Rake::Task[:clean_pdf].invoke
   sh "bundle exec review-pdfmaker config.yml"
