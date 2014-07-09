@@ -21,4 +21,6 @@ APIにアクセスすることを一般的に「APIを叩く」と表現しま�
 本書の内容は *2014年1月末日* 時点のAPIを元に書かれています。
 艦これAPIやDMMゲームの仕様に関しては、通信内容やhtmlやjavascriptを読んで推測したものであり、
 内部の動作が実際にそうであるということは保証できません。
-なお、過去のAPIに対応した自動化システム(以下 `IJN48`)を [Github](https://github.com/masarakki/IJN48) で公開しています。
+なお、過去のAPIに対応した自動化システム(以下 `IJN48`)を **Github** で公開しています@<fn>{github}。
+
+//footnote[github][[https://github.com/masarakki/IJN48]()]
