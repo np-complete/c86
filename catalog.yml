@@ -5,4 +5,5 @@ CHAPS:
   - general.re
   - data.re
   - fleet.re
+  - battle.re
 POSTDEF:
