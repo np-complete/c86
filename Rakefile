@@ -5,7 +5,7 @@ rule '.re' => ['.md'] do |t|
 end
 
 desc "generate pdf"
-file "c86.pdf" => re_files do |t|
+file "c86.pdf" => re_files + %w{catalog.yml config.yml}  do |t|
   Rake::Task[:clean_pdf].invoke
   sh "bundle exec review-pdfmaker config.yml"
 end
