@@ -8,10 +8,17 @@
 bookname: c86
 # 書名
 booktitle: 艦これAPIを叩く
+okuduke_keys:
+  - dat
+  - aut
+  - crl
+  - prt
 # 著者
+dat: C86 2014.08.17
 aut: まさらっき
+crl: NP-complete
 # 以下はオプション
-prt: NP-complete
+# prt: NP-complete
 # asn: Associated name
 # ant: Bibliographic antecedent
 # clb: 貢献者
@@ -21,6 +28,7 @@ prt: NP-complete
 # ill: イラストレータ
 # pht: 撮影者
 # trl: 翻訳者
+
 date: 2014-08-17
 # rights: 権利表記
 # description: ブックの説明
@@ -48,11 +56,11 @@ epubversion: 3
 # HTMLのバージョン(現時点では4または5。デフォルトは4。epubversionを3にした場合は自動で5に設定される)
 htmlversion: 5
 # 表紙を出力するか
-titlepage: true
+titlepage: false
 # 目次を出力するか
 toc: true
 # EPUB標準の目次以外に目次を作成するか
-mytoc: null
+mytoc: true
 # 奥付を作成するか。デフォルトでは作成されない。trueを指定するとデフォルトの奥付、ファイル名を指定するとそれがcolophon.htmlとしてコピーされる
 colophon: true
 # XHTML生成後に実行するプログラム。$1:HTMLの生成されたディレクトリ $2:Re:VIEWファイルのあるディレクトリ $3:起動時指定のyamlファイル名
