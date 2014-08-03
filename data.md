@@ -15,12 +15,12 @@
 ## マスタデータ
 
 マスタデータのAPIは全て `/kcsapi/api_get_master/` というURLの下にあります。
-艦種、艦娘データ、装備、家具 などの固定データをひと通り取得します@<fn>{master-response}。
+ログイン時に艦種、艦娘データ、装備、家具 などの固定データをひと通り取得します@<fn>{master-response}。
 例外はマップに関するマスタデータで、これは出撃のたびに取得されます。
 
 //footnote[master-response][[https://github.com/masarakki/IJN48/tree/master/spec/support/api/defaults/api\_get\_master]()]
 
-例えば艦種データを見てみると id=1 が 「海防艦」 だったり、 「戦艦」 が2種類あったり、
+例えば艦種データを見てみるとid=1が海防艦だったり、戦艦が2種類あったり、
 なかなか不思議なものを見た気になります。
 
 ### 艦娘マスタデータ
@@ -58,17 +58,18 @@
 //footnote[ship-response][[https://github.com/masarakki/IJN48/blob/master/spec/support/api/defaults/api\_get\_member/ship.json]()]
 
 ```json
-{"api_member_id":32377,
- "api_id":2,
- "api_sortno":347,
- "api_name":"\u6dbc\u98a8\u6539",
- "api_yomi":"\u3059\u305a\u304b\u305c",
- "api_stype":2,
- "api_ship_id":247,
- "api_lv":77,"api_exp":349951,"api_afterlv":0,
- "api_aftershipid":0,
- "api_nowhp":15,"api_maxhp":30,
- "api_taik":[30,57],"api_souk":[49,49],"api_houg":[53,49], ...
+{
+  "api_member_id":32377,
+  "api_id":2,
+  "api_sortno":347,
+  "api_name":"\u6dbc\u98a8\u6539",
+  "api_yomi":"\u3059\u305a\u304b\u305c",
+  "api_stype":2,
+  "api_ship_id":247,
+  "api_lv":77,"api_exp":349951,"api_afterlv":0,
+  "api_aftershipid":0,
+  "api_nowhp":15,"api_maxhp":30,
+  "api_taik":[30,57],"api_souk":[49,49],"api_houg":[53,49], ...
 }
 ```
 
@@ -76,8 +77,8 @@
 
 見て解るとおり、`ship_id` が指定されているにも関わらず、
 **艦娘のマスタデータを一切使わず**すべて冗長なデータになっています。
-この中で必要なデータは id, ship_id, 現在のステータス値 だけであることは容易に解ります。
-ソート順の変更も、ソート後のidのリストでよいはずです。
+この中で必要なデータは**id, ship_id, 現在のステータス値**だけであることは容易に解ります。
+ソート順の変更も、**ソートされたidのリスト**でよいはずです。
 
 ### 武器データ
 
@@ -118,7 +119,7 @@
 中身のコードがわからないので正確なところはわかりませんが、
 レスポンスの `svdata=` はおそらく**グローバル変数への代入**のような処理だと想像します。
 つまり、APIのレスポンスを受け取るとグローバル変数が書き換えられることになり、
-これを上手く制御して動かすには、 通信が**逐次実行**であることが保証されてないといけません@<fn>{its-easy}。
+これを上手く制御して動かすには、通信が**逐次実行**であることが保証されてないといけません@<fn>{its-easy}。
 
 「複数のリクエストを同時に出し、返ってきたレスポンスから処理する」という非同期通信の強みが使えないことになります。
 さらに、レスポンスを見て新しくリクエストを作ることも難しいので、「必要なデータがなかったら差分取得」みたいなコードも書きにくいのではないでしょうか。
