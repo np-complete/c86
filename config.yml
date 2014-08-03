@@ -12,11 +12,13 @@ okuduke_keys:
   - dat
   - aut
   - crl
+  - rep
   - prt
 # 著者
 dat: C86 2014.08.17
 aut: まさらっき
 crl: NP-complete
+rep: https://github.com/np-complete/c86
 # 以下はオプション
 # prt: NP-complete
 # asn: Associated name
@@ -28,7 +30,6 @@ crl: NP-complete
 # ill: イラストレータ
 # pht: 撮影者
 # trl: 翻訳者
-
 date: 2014-08-17
 # rights: 権利表記
 # description: ブックの説明
