@@ -9,8 +9,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="297mm"
-   height="210mm"
+   width="1289.7638"
+   height="910.62988"
    id="svg2985"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -27,17 +27,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.87"
-     inkscape:cx="405.82755"
-     inkscape:cy="389.40711"
+     inkscape:zoom="0.435"
+     inkscape:cx="831.26647"
+     inkscape:cy="452.42883"
      inkscape:current-layer="layer1"
      id="namedview2989"
      showgrid="false"
      inkscape:window-width="1462"
      inkscape:window-height="899"
-     inkscape:window-x="258"
-     inkscape:window-y="113"
-     inkscape:window-maximized="0" />
+     inkscape:window-x="212"
+     inkscape:window-y="83"
+     inkscape:window-maximized="0"
+     units="mm"
+     width="364mm" />
   <metadata
      id="metadata2991">
     <rdf:RDF>
@@ -46,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,12 +56,13 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     style="opacity:0.25;display:inline">
+     style="opacity:0.25;display:inline"
+     transform="translate(0,166.53544)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot2994"
        style="font-size:9px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ricty;-inkscape-font-specification:Ricty"
-       transform="matrix(0.99571272,-0.09249961,0.09249961,0.99571272,-44.276139,39.85525)"><flowRegion
+       transform="matrix(1.2214142,-0.11346681,0.11346681,1.2214142,-156.80919,-112.742)"><flowRegion
          id="flowRegion2996"><rect
            id="rect2998"
            width="1388.8942"
@@ -87,11 +90,12 @@
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="title">
+     inkscape:label="title"
+     transform="translate(0,166.53544)">
     <flowRoot
        xml:space="preserve"
        id="flowRoot3028"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Ricty;font-style:normal;font-weight:normal;font-size:72px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:Ricty;font-stretch:normal;font-variant:normal"><flowRegion
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ricty;-inkscape-font-specification:Ricty"><flowRegion
          id="flowRegion3030"><rect
            id="rect3032"
            width="289.06503"
@@ -103,7 +107,7 @@
        xml:space="preserve"
        id="flowRoot3036"
        style="font-size:113.17346954px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ricty;-inkscape-font-specification:Ricty"
-       transform="matrix(1.2147281,0,0,1.26296,-124.84365,26.729294)"><flowRegion
+       transform="matrix(1.6404647,0,0,1.7056001,-254.11331,-147.04732)"><flowRegion
          id="flowRegion3038"><rect
            id="rect3040"
            width="443.3866"
@@ -113,12 +117,12 @@
            style="font-size:113.17346954px" /></flowRegion><flowPara
          id="flowPara3042"
          style="font-size:124.12574005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:89.99999762%;letter-spacing:0px;word-spacing:-0.3875314px;writing-mode:lr-tb;text-anchor:start;font-family:HannariMincho;-inkscape-font-specification:HannariMincho">艦これ</flowPara><flowPara
-         style="font-size:124.12574004999999033px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:68.00000072000000273%;letter-spacing:14.5324276px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;font-family:Kinnari;-inkscape-font-specification:Kinnari Medium"
+         style="font-size:124.12574005px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:68.00000072%;letter-spacing:14.53242779px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;font-family:Kinnari;-inkscape-font-specification:Kinnari Medium"
          id="flowPara3017">API</flowPara><flowPara
-         style="font-size:124.12574004999999033px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:105%;writing-mode:lr-tb;text-anchor:start;font-family:HannariMincho;-inkscape-font-specification:HannariMincho"
+         style="font-size:124.12574005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:104.99999523%;writing-mode:lr-tb;text-anchor:start;font-family:HannariMincho;-inkscape-font-specification:HannariMincho"
          id="flowPara3019">を</flowPara><flowPara
          id="flowPara3044"
-         style="font-size:124.12574004999999033px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:71.99999785%;writing-mode:lr-tb;text-anchor:start;font-family:HannariMincho;-inkscape-font-specification:HannariMincho">叩く</flowPara></flowRoot>    <flowRoot
+         style="font-size:124.12574005px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:71.9999969%;writing-mode:lr-tb;text-anchor:start;font-family:HannariMincho;-inkscape-font-specification:HannariMincho">叩く</flowPara></flowRoot>    <flowRoot
        style="font-size:9px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ricty;-inkscape-font-specification:Ricty"
        id="flowRoot3046"
        xml:space="preserve"><flowRegion
@@ -132,7 +136,7 @@
          id="flowPara3054" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot3031"
-       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'07YasashisaAntique';font-style:normal;font-weight:normal;font-size:64px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'07YasashisaAntique';font-stretch:normal;font-variant:normal"><flowRegion
+       style="font-size:64px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'07YasashisaAntique';-inkscape-font-specification:'07YasashisaAntique'"><flowRegion
          id="flowRegion3033"><rect
            id="rect3035"
            width="287.91339"
@@ -144,7 +148,7 @@
        xml:space="preserve"
        id="flowRoot3039"
        style="font-size:9px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:'07YasashisaAntique';-inkscape-font-specification:'07YasashisaAntique'"
-       transform="matrix(1.0635857,0,0,1.0635857,10.740146,-35.495759)"><flowRegion
+       transform="matrix(1.0635857,0,0,1.0635857,223.33857,-35.495759)"><flowRegion
          id="flowRegion3041"><rect
            id="rect3043"
            width="351.25433"

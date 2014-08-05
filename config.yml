@@ -46,6 +46,7 @@ stylesheet: stylesheet.css
 # texstyle: samplemacro
 # LaTeX用のdocumentclassを指定する
 # texdocumentclass: ["jsarticle", "b5paper,oneside"]
+texdocumentclass: ["jsbook", "twoside,openany"]
 # LaTeX用のコマンドを指定する(platex or lualatex)
 # texcommand: "platex"
 # 目次として抽出するレベル
