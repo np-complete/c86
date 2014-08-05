@@ -19,8 +19,9 @@ dat: C86 2014.08.17
 aut: まさらっき
 crl: NP-complete
 rep: https://github.com/np-complete/c86
+prt: サンライズパブリケーション
+
 # 以下はオプション
-# prt: NP-complete
 # asn: Associated name
 # ant: Bibliographic antecedent
 # clb: 貢献者
