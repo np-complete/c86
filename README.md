@@ -7,3 +7,6 @@
     rake
 
 `c86.pdf` will be generated!
+
+
+[wishlistはこちら](https://bit.ly/masarakki)
