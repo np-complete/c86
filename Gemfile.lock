@@ -5,24 +5,30 @@ GIT
   specs:
     review (1.3.0)
 
+PATH
+  remote: /home/masaki/src/github.com/takahashim/md2review
+  specs:
+    md2review (1.2.0)
+      redcarpet (> 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.0)
-    md2review (1.2.0)
-      redcarpet (> 2.0.0)
     method_source (0.8.2)
-    pry (0.10.0)
+    pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    redcarpet (3.1.2)
+    rake (10.4.2)
+    redcarpet (3.2.2)
     slop (3.6.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  md2review
+  md2review!
   pry
+  rake
   review!

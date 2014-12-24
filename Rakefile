@@ -1,20 +1,23 @@
 require 'review'
+require 'rake/clean'
 
-re_files = File.read("./catalog.yml").scan(/\w*?\.re/)
+SRCS = FileList['*.md']
+OBJS = SRCS.ext('re')
+PROJECT = 'c86'
+PDF = "#{PROJECT}.pdf"
 
-rule '.re' => ['.md'] do |t|
-  sh "bundle exec md2review #{t.source} > #{t.name}"
+CLEAN.include(OBJS)
+CLOBBER.include(PDF)
+
+rule '.re' => '.md' do |t|
+  sh "bundle exec md2review --render-link-as-footnote #{t.source} > #{t.name}"
 end
 
 desc "generate pdf"
-file "c86.pdf" => re_files + %w{catalog.yml config.yml locale.yml}  do |t|
-  Rake::Task[:clean_pdf].invoke
+file PDF => OBJS + %w{catalog.yml config.yml locale.yml}  do |t|
+  rm_rf "#{PROJECT}-pdf" if File.exist?("#{PROJECT}-pdf")
+  rm PDF if File.exist?(PDF)
   sh "bundle exec review-pdfmaker config.yml"
 end
 
-task :clean_pdf do
-  sh "rm -r c86-pdf" if File.exists?("c86-pdf") && File.directory?("c86-pdf")
-  sh "rm c86.pdf" if File.exists?("c86.pdf")
-end
-
-task :default => "c86.pdf"
+task :default => PDF

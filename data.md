@@ -14,11 +14,9 @@
 
 ## マスタデータ
 
-マスタデータのAPIは全て `/kcsapi/api_get_master/` というURLの下にあります。
-ログイン時に艦種、艦娘データ、装備、家具 などの固定データをひと通り取得します@<fn>{master-response}。
+[マスタデータのAPI](https://github.com/masarakki/IJN48/tree/master/spec/support/api/defaults/api_get_master)は全て `/kcsapi/api_get_master/` というURLの下にあります。
+ログイン時に艦種、艦娘データ、装備、家具 などの固定データをひと通り取得します。
 例外はマップに関するマスタデータで、これは出撃のたびに取得されます。
-
-//footnote[master-response][[https://github.com/masarakki/IJN48/tree/master/spec/support/api/defaults/api\_get\_master]()]
 
 例えば艦種データを見てみるとid=1が海防艦だったり、戦艦が2種類あったり、
 なかなか不思議なものを見た気になります。
@@ -29,20 +27,18 @@
 このデータにはやはり**不要なデータ**がたくさん入っています。
 初期のデータはなるべく小さく、必要になった時点で他のデータを取ってくる設計にするとかなり小さくなるはずです。
 
-例えば、全員分のドロップ時のメッセージ@<fn>{drop-message}が含まれています。
+例えば、全員分のドロップ時のメッセージ[^drop-message]が含まれています。
 回数的に考えると、戦闘終了時のAPIレスポンスに毎回含めたほうが全体のサイズは小さくなると思います。
 
 他にも図鑑で使うためか能力の初期値が全員分含まれていますが、これも図鑑にアクセスした瞬間に取得するべきです。
 一回のログインで一度も図鑑にアクセスしない人のほうが多分多いんだから。
 
-//footnote[drop-message][例) 艦隊のアイドル、那珂ちゃんだよー。よっろしくぅ～!]
+[^drop-message]: 例) 艦隊のアイドル、那珂ちゃんだよー。よっろしくぅ～!
 
 ## ユーザデータ
 
-ユーザデータのAPIは全て `/kcsapi/api_get_member/` というURLの下にあります。
-所持している艦娘、装備、家具や艦隊の情報、レベルや資材の数などが取得できます@<fn>{member-response}。
-
-//footnote[member-response][[https://github.com/masarakki/IJN48/tree/master/spec/support/api/defaults/api\_get\_member]()]
+[ユーザデータのAPI](https://github.com/masarakki/IJN48/tree/master/spec/support/api/defaults/api_get_member)は全て `/kcsapi/api_get_member/` というURLの下にあります。
+所持している艦娘、装備、家具や艦隊の情報、レベルや資材の数などが取得できます。
 
 ### 艦娘データ
 
@@ -53,9 +49,7 @@
 艦隊編成画面の**ソート順**をグローバルに持っていて、その順でソートされたレスポンスが返ってきます。
 艦隊編成画面でソート順を変更すると、**全部取得しなおし**です。
 
-それぞれの艦のデータ@<fn>{ship-response}は
-
-//footnote[ship-response][[https://github.com/masarakki/IJN48/blob/master/spec/support/api/defaults/api\_get\_member/ship.json]()]
+それぞれの[艦のデータ](https://github.com/masarakki/IJN48/blob/master/spec/support/api/defaults/api_get_member/ship.json)は
 
 ```json
 {
@@ -82,18 +76,17 @@
 
 ### 武器データ
 
-もっと凶悪なのが武器データ@<fn>{slot-response}です。
+もっと凶悪なのが[武器データ](https://github.com/masarakki/IJN48/blob/master/spec/support/api/defaults/api_get_member/slotitem.json)です。
 所持している武器を全て取得します。
 艦娘の数とは比べ物になりません。
-データサイズでおよそ6倍@<fn>{slot-size}ありました。
+データサイズでおよそ6倍[^slot-size]ありました。
 武器を破棄が凄く遅いのは、破棄後に毎回このAPIが呼ばれるためです。
 
 艦娘と同じように全て冗長なデータになっています。
 武器は成長の要素がないので、**id何番の武器を何個持っている**というレスポンスで十分です。
 たぶん現在のレスポンスを9割くらい削減できるのではないでしょうか。
 
-//footnote[slot-response][[https://github.com/masarakki/IJN48/blob/master/spec/support/api/defaults/api\_get\_member/slotitem.json]()]
-//footnote[slot-size][所持艦娘: 30KB   所持装備: 200KB]
+[^slot-size]: 所持艦娘: 30KB   所持装備: 200KB
 
 ## 初期化処理の最適化サンプル
 
@@ -102,12 +95,12 @@
 
 ログイン直後にマスタデータを取得する必要はありません。
 最短で提督部屋の画面を出すために、**秘書官のIDと内装のIDリスト**だけを返すAPIを作りましょう。
-秘書艦のログイン時ボイスや、内装の画像は**IDからurlが決まる**ようにルールづけしましょう@<fn>{maybe-done}。
+秘書艦のログイン時ボイスや、内装の画像は**IDからurlが決まる**ようにルールづけしましょう[^maybe-done]。
 これだけで提督部屋の画面が出せます。たった数キロバイトで実現可能です。
 
 その後おいおいマスタデータや他のユーザデータを取得するようにしましょう。
 
-//footnote[maybe-done][たぶん最初からそうなってる]
+[^maybe-done]: たぶん最初からそうなってる
 
 ## まとめ: API改善ガイド
 
@@ -119,9 +112,9 @@
 中身のコードがわからないので正確なところはわかりませんが、
 レスポンスの `svdata=` はおそらく**グローバル変数への代入**のような処理だと想像します。
 つまり、APIのレスポンスを受け取るとグローバル変数が書き換えられることになり、
-これを上手く制御して動かすには、通信が**逐次実行**であることが保証されてないといけません@<fn>{its-easy}。
+これを上手く制御して動かすには、通信が**逐次実行**であることが保証されてないといけません[^its-easy]。
 
 「複数のリクエストを同時に出し、返ってきたレスポンスから処理する」という非同期通信の強みが使えないことになります。
 さらに、レスポンスを見て新しくリクエストを作ることも難しいので、「必要なデータがなかったら差分取得」みたいなコードも書きにくいのではないでしょうか。
 
-//footnote[its-easy][逐次実行は理解しやすいので悪いわけではない 特にゲームの進行などでは 適材適所である]
+[^its-easy]: 逐次実行は理解しやすいので悪いわけではない 特にゲームの進行などでは 適材適所である

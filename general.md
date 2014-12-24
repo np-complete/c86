@@ -49,11 +49,11 @@ svdata={JSON文字列}
 レスポンスを出力してもBOMは目に見えないので、JSONを取得するための `s/^svdata=//` が上手く動かない理由に気づきにくく、非常に困りました。もし**わざとやっているなら**なかなか優秀な罠です。
 
 ソースコードの保存時に起きた問題と考えられ、開発者のエディタやその設定が共通化されていないことが想像できます。
-また、ファイルの先頭バイトがレスポンスにそのまま出力されている@<fn>{php-and-bom}という特徴から、
-サーバの言語は**php**ではないか@<fn>{not-template}と予想しています。
+また、ファイルの先頭バイトがレスポンスにそのまま出力されている[^php-and-bom]という特徴から、
+サーバの言語は**php**ではないか[^not-template]と予想しています。
 
-//footnote[php-and-bom][<?php の前にBOMのバイト列が書かれていることになる]
-//footnote[not-template][テンプレートに紛れ込んでいる可能性もあるがJSONを個別にテンプレートファイルに書くとは思えない]
+[^php-and-bom]: <?php の前にBOMのバイト列が書かれていることになる
+[^not-template]: テンプレートに紛れ込んでいる可能性もあるがJSONを個別にテンプレートファイルに書くとは思えない
 
 ### ステータスコード
 
@@ -76,9 +76,7 @@ APIリクエストの失敗理由が(たぶん)高負荷の場合などは、
 
 APIレスポンスの主要なデータは、`api_data` というキーの中に入っています。
 大雑把に書くとこのようなデータになっています。
-Github には大量の**レスポンスのサンプル**があります@<fn>{sample-api-response}。
-
-//footnote[sample-api-response][[https://github.com/masarakki/IJN48/tree/master/spec/support/api]()]
+Github には[大量の**レスポンスのサンプル**](https://github.com/masarakki/IJN48/tree/master/spec/support/api)があります
 
 ```json
 {"api_result": 1,

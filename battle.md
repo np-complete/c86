@@ -19,14 +19,13 @@
 羅針盤が回っている時には既に行き先は決定しています。
 
 レスポンスには移動先の情報が含まれていますが、本当に知性を感じられない設計になっています。
-特に重要な戦闘の属性は `api_color_no` という意味の分からないキー名が振られています@<fn>{color_no}。
+特に重要な戦闘の属性は `api_color_no` という[意味の分からないキー名が振られています](https://github.com/masarakki/IJN48/blob/master/lib/naka/models/battle/move.rb#L15)。
 夜戦スタートとかは判明したんですが潜水艦の判定を出してるのがどこなのかは最後まで判明しませんでした。
 
 あと物資がもらえるマスを通っても物資が増えないという現象に遭遇しました。
-これも最後まで何をすれば回収できるのか判明しませんでした@<fn>{what-cruising}。
+これも最後まで何をすれば回収できるのか判明しませんでした[^what_cruising]。
 
-//footnote[color_no][[https://github.com/masarakki/IJN48/blob/master/lib/naka/models/battle/move.rb#L15]()]
-//footnote[what-cruising][オリョクル? なにそれ美味しいの?]
+[^what_cruising]: オリョクル? なにそれ美味しいの?
 
 ### 戦闘系API
 
@@ -35,9 +34,9 @@
 「通常戦闘からの夜戦」と「夜間戦闘」は別のAPIです。
 
 戦闘APIを叩くと戦闘結果が返ってきます。
-信じがたいほど理解しにくいJSON@<fn>{battle-result}で、知性の欠如を感じます。
+[信じがたいほど理解しにくいJSON](https://github.com/masarakki/IJN48/blob/master/lib/naka/models/battle/battle.rb#L18)で、知性の欠如を感じます。
 
-例えば砲撃の結果は、 `api_hougeki` の中に `api_def_list` と `api_damage` の2つの配列@<fn>{ignore-attacker}が入っています。
+例えば砲撃の結果は、 `api_hougeki` の中に `api_def_list` と `api_damage` の2つの配列[^ignore-attacker]が入っています。
 
 ```json
 {
@@ -49,7 +48,7 @@
 }
 ```
 
-このデータを、`api_def_list` の `n` 番目に書かれた艦@<fn>{ship-index}に `api_damage` の `n` 番目に書かれた数字をダメージとして与える、というルールで処理していきます。
+このデータを、`api_def_list` の `n` 番目に書かれた艦[^ship-index]に `api_damage` の `n` 番目に書かれた数字をダメージとして与える、というルールで処理していきます。
 
 `api_hougeki` を配列に、その中の要素をハッシュにしたほうが圧倒的に理解しやすい表現です。
 
@@ -81,7 +80,7 @@
 
 この場合コードによる補足が無いと理解しづらいですが、`api_hougeki` が配列なだけで遥かにマシです。
 APIレスポンスは人間の理解できる構造を表現するべきであり、
-元のレスポンスは `for` 文 という**コンピュータの処理の都合**に合わせて作られていて不適切です@<fn>{old-for}。
+元のレスポンスは `for` 文 という**コンピュータの処理の都合**に合わせて作られていて不適切です[^old-for]。
 
 なお、去年の冬くらいに、
 「戦闘APIを叩いたあとは10秒間待たないと次のAPIリクエストがことごとくエラーになる」
@@ -89,10 +88,9 @@ APIレスポンスは人間の理解できる構造を表現するべきであ�
 この変更により、ただでさえ面倒な戦闘が致命的に面倒になったので、
 イベント以外のプレイを完全に辞めました。
 
-//footnote[battle-result][[https://github.com/masarakki/IJN48/blob/master/lib/naka/models/battle/battle.rb#L18]()]
-//footnote[ignore-attacker][誰が攻撃したかは戦闘結果に関係ないので無視している]
-//footnote[ship-index][敵味方艦混合でインデックスが振られる 味方艦:1-6 敵艦:7-12 みたいな感じに]
-//footnote[old-for][元レスポンスの配列は固定長 つまり固定回数の `for` を回している可能性がある 圧倒的にダサい]
+[^ignore-attacker]: 誰が攻撃したかは戦闘結果に関係ないので無視している
+[^ship-index]: 敵味方艦混合でインデックスが振られる 味方艦:1-6 敵艦:7-12 みたいな感じに
+[^old-for]: 元レスポンスの配列は固定長 つまり固定回数の `for` を回している可能性がある 圧倒的にダサい
 
 ### 結果系API
 
@@ -144,23 +142,23 @@ RESTとAPIは相性がよく、よい設計の助けになります。
 }
 ```
 
-すでに出撃中の場合@<fn>{in-sotie}、APIは `400 Bad Request` を返して失敗します。
+すでに出撃中の場合[^in-sotie]、APIは `400 Bad Request` を返して失敗します。
 
-//footnote[in-sotie][つまり `done` が `false` な `sotie` が存在する場合]
+[^in-sotie]: つまり `done` が `false` な `sotie` が存在する場合
 
-この**出撃のリソース**には何時でも、何回でもアクセスでき、常に同じ情報が取得できます@<fn>{idempotence}。
+この**出撃のリソース**には何時でも、何回でもアクセスでき、常に同じ情報が取得できます[^idempotence]。
 
     GET /soties/2341234
 
-//footnote[idempotence][このような性質を**冪等性**と言う HTTPの `GET` は冪等性を持つべきとされている]
+[^idempotence]: このような性質を**冪等性**と言う HTTPの `GET` は冪等性を持つべきとされている
 
 出撃を終了するには `DELETE` メソッドを使います。
 
     DELETE /soties/2341234
 
-リクエストを見るだけで `done` が `true` に設定されると想像できるでしょう@<fn>{soft-delete}。
+リクエストを見るだけで `done` が `true` に設定されると想像できるでしょう[^soft-delete]。
 
-//footnote[soft-delete][この方法を**論理削除**という 記録を残す必要がなければ単に**物理削除**してもよい]
+[^soft-delete]: この方法を**論理削除**という 記録を残す必要がなければ単に**物理削除**してもよい
 
 ### 移動
 
@@ -201,10 +199,10 @@ RESTとAPIは相性がよく、よい設計の助けになります。
 }
 ```
 
-移動できない場合@<fn>{cant-move}は、`400 Bad Request` を返します。
+移動できない場合[^cant-move]は、`400 Bad Request` を返します。
 レスポンスの中身に戦闘しろ、とか帰還しろ、のように書いてもいいと思います。
 
-//footnote[cant-move][戦闘しないといけない場合や終端の場合など]
+[^cant-move]: 戦闘しないといけない場合や終端の場合など
 
 もちろん作ったリソースは `GET` で何度でも情報は取得できるし、
 更に全ての移動経路も取得できるAPIも欲しいですね。
@@ -244,10 +242,10 @@ APIレスポンスに載せるかどうかは別の話です。
     formation=3
 
 これは**何度でも実行できる**べきです。
-また、変更できない場合@<fn>{cant-modify-formation}は、`400 Bad Request` を返してもいいし、
+また、変更できない場合[^cant-modify-formation]は、`400 Bad Request` を返してもいいし、
 `200 Success` を返しつつ変更は無視してもいいでしょう。
 
-//footnote[cant-modify-formation][少数編成の場合や通常戦闘でない場合]
+[^cant-modify-formation]: 少数編成の場合や通常戦闘でない場合
 
 戦闘結果を取得しましょう。
 
@@ -307,22 +305,22 @@ APIレスポンスに載せるかどうかは別の話です。
 この仕様は本物の糞です。
 
 最後にどの状態だったのか、サーバは知っているはずです。
-きちんと設計すれば直前の状況まで復旧することは可能です@<fn>{enable-now}。
-今回の実装例だと、過去も含めて全ての出撃を再現可能です@<fn>{store-initial-fleet}。
+きちんと設計すれば直前の状況まで復旧することは可能です[^enable-now]。
+今回の実装例だと、過去も含めて全ての出撃を再現可能です[^store-initial-fleet]。
 
 この点パズドラは本当に上手くやっていると思います。
 
-//footnote[enable-now][現状でも可能だと思うんですけどね・・・出撃終了条件を変な扱いしてるから・・・]
-//footnote[store-initial-fleet][出撃時の艦隊の状態を保存する必要があります]
+[^enable-now]: 現状でも可能だと思うんですけどね・・・出撃終了条件を変な扱いしてるから・・・
+[^store-initial-fleet]: 出撃時の艦隊の状態を保存する必要があります
 
 ### 問題点
 
 たぶんこの戦闘APIの設計には色々反論したい人がいると思います。
 夜戦は新しいリソースとして作るべきだとか、それぞれのresult分けるべきだとか、
 `POST /battles` の瞬間に結果を確定させるべきだとか、まぁいろいろ思うところはあると思います。
-これもただの一例なので、**よく考えて作ろう**とか**俺はこんなふうに思考して作ってる**って部分が伝わればいいと思います@<fn>{hidden-from-fundamentalism}。
+これもただの一例なので、**よく考えて作ろう**とか**俺はこんなふうに思考して作ってる**って部分が伝わればいいと思います[^hidden-from-fundamentalism]。
 
-//footnote[hidden-from-fundamentalism][こわいこわいRESTfulおじさんに見つかりませんように・・・]
+[^hidden-from-fundamentalism]: こわいこわいRESTfulおじさんに見つかりませんように・・・
 
 このAPI設計の問題点として、明らかに**更新の処理が複雑になる**のが目に見えています。
 どのパラメータを弄れるかというのがかなり状態に依存するので、
