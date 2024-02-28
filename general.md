@@ -73,7 +73,7 @@ APIリクエストの失敗理由が(たぶん)高負荷の場合などは、
 
 APIレスポンスの主要なデータは、`api_data` というキーの中に入っています。
 大雑把に書くとこのようなデータになっています。
-Github には[大量の**レスポンスのサンプル**](https://github.com/masarakki/IJN48/tree/master/spec/support/api)があります
+Github には[大量のレスポンスのサンプル](https://github.com/masarakki/IJN48/tree/master/spec/support/api)があります
 
 ```json
 {"api_result": 1,

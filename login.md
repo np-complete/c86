@@ -29,7 +29,7 @@ DMMのユーザIDが取得できると、艦これサーバに接続し、所属
 ログインAPIが成功すると、
 レスポンスには**api_token**と**api_starttime**という2つの情報が含まれていて、
 この2つの情報をパラメータにしてflashを読み込み、ゲームが始まります。
-ちなみに `IJN48` では、このflashを読み込む瞬間を[**Chrome Extensionでフック**]((https://github.com/masarakki/IJN48/blob/master/crx/content_script.coffee))し、
+ちなみに `IJN48` では、このflashを読み込む瞬間を[Chrome Extensionでフック]((https://github.com/masarakki/IJN48/blob/master/crx/content_script.coffee))し、
 ローカルに立てたサーバにトークンを送信して、認証情報を外の世界に送る[^1]という工夫をしています。
 
 ユーザがBANされている場合、ログインAPIは特殊なレスポンスを返し、
