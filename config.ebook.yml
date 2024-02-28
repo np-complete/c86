@@ -1,0 +1,2 @@
+inherit: ["config.common.yml"]
+texdocumentclass: ["review-jsbook", "media=ebook,paper=a5"]

@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: np-complete/build-book-action@v1
         with:
-          bundler-cache: true
+          config: config.ebook.yml
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book
+          path: book.pdf
