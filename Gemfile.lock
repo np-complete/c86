@@ -13,15 +13,17 @@ GEM
       method_source (~> 1.0)
     rake (13.2.1)
     redcarpet (3.6.0)
-    review (5.8.0)
+    review (5.9.0)
       image_size
       rexml
       rouge
       rubyzip
       tty-logger
-    rexml (3.2.6)
-    rouge (4.2.0)
+    rexml (3.3.1)
+      strscan
+    rouge (4.3.0)
     rubyzip (2.3.2)
+    strscan (3.1.0)
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
