@@ -10,7 +10,7 @@ jobs:
       - uses: np-complete/build-book-action@v1
         with:
           config: config.ebook.yml
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: book
           path: book.pdf
