@@ -2,11 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.3)
+    csv (3.3.5)
     image_size (3.4.0)
     io-console (0.8.2)
     md2review (1.12.1)
       redcarpet (> 2.0.0)
     method_source (1.1.0)
+    nkf (0.2.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
     pry (0.16.0)
@@ -17,15 +19,17 @@ GEM
     redcarpet (3.6.0)
     reline (0.6.3)
       io-console (~> 0.5)
-    review (5.9.0)
+    review (5.10.0)
+      csv
       image_size
+      nkf
       rexml
       rouge
       rubyzip
       tty-logger
-    rexml (3.4.2)
-    rouge (4.3.0)
-    rubyzip (2.3.2)
+    rexml (3.4.4)
+    rouge (4.7.0)
+    rubyzip (2.4.1)
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
