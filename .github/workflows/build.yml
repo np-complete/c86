@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: np-complete/build-book-action@v1
+      - uses: np-complete/build-book-action@v2
         with:
           config: config.ebook.yml
       - uses: actions/upload-artifact@v6
