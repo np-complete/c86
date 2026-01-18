@@ -1,8 +1,0 @@
-- [まえがき](intro.md)
-- [ログイン](login.md)
-- [API概略](general.md)
-- [データ取得API](data.md)
-- [編成・補給・修理・遠征](fleet.md)
-- [出撃・戦闘](battle.md)
-- [まとめ](conclusion.md)
-- [あとがき](outro.md)

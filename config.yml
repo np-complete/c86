@@ -1,1 +1,3 @@
-inherit: ["config.common.yml"]
+booktitle: 艦これAPIを叩く
+date: 2014-08-17
+history: [["2014-08-17"]]
