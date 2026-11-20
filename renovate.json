@@ -28,6 +28,15 @@
         "/^actions//",
         "/^np-complete//"
       ]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": [
+        "np-complete/book-actions"
+      ],
+      "minimumReleaseAge": "0 days",
+      "automerge": true,
+      "groupName": null
     }
   ],
   "vulnerabilityAlerts": {
