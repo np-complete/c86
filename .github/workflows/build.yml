@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: np-complete/build-book-action@f703cda41a7e05cf127ccdabb84ad7507351e38a # v2.3
+      - uses: np-complete/build-book-action@6291698101eaf6490329740e39db10bf0bfdfcd6 # v2
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: book
