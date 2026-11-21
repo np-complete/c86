@@ -37,6 +37,11 @@
       "minimumReleaseAge": "0 days",
       "automerge": true,
       "groupName": null
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["np-complete/book-actions"],
+      "rangeStrategy": "replace"
     }
   ],
   "vulnerabilityAlerts": {
